@@ -1,0 +1,71 @@
+{
+  "SchemaVersion": 1,
+  "Revision": "2026-11-08.3",
+  "ResearchedAt": "2026-11-08",
+  "Profiles": [
+    {
+      "Id": "turkey-disorder",
+      "Name": "Türkiye · çoklu ISS",
+      "ProviderHint": "TT / Superonline / Kablonet / mobil",
+      "Description": "Yedi ISS adının ortak tekniği; iki baytta ters sıralama ve bir bayt örtüşme.",
+      "Arguments": [
+        "--lua-desync=multidisorder:pos=2:seqovl=1"
+      ],
+      "Init": []
+    },
+    {
+      "Id": "turkey-md5-split",
+      "Name": "Türkiye · MD5 + bölme",
+      "ProviderHint": "Alternatif",
+      "Description": "TLS 1.2 için yayımlanan iki sahte istek ve iki baytta bölme.",
+      "Arguments": [
+        "--lua-desync=fake:blob=0x00000000:tcp_md5:repeats=1",
+        "--lua-desync=fake:blob=fake_default_tls:tcp_md5:tls_mod=rnd,dupsid:repeats=1",
+        "--lua-desync=multisplit:pos=2"
+      ],
+      "Init": []
+    },
+    {
+      "Id": "next-alt7",
+      "Name": "TLS · örtüşme",
+      "ProviderHint": "Alternatif",
+      "Description": "TLS uzantısı sınırında örtüşen parçalar kullanılır.",
+      "Arguments": [
+        "--lua-desync=multisplit:pos=2,sniext+1:seqovl=679:seqovl_pattern=fake_default_tls:tcp_ts_up"
+      ],
+      "Init": []
+    },
+    {
+      "Id": "fake-disorder",
+      "Name": "Sahte TLS · ters sıra",
+      "ProviderHint": "Alternatif",
+      "Description": "MD5 ve sıra numarasıyla geçersiz kılınmış sahte istek; ardından ters sıralama.",
+      "Arguments": [
+        "--lua-desync=fake:blob=fake_default_tls:tcp_md5:tcp_seq=-10000:repeats=6",
+        "--lua-desync=multidisorder:pos=1,midsld"
+      ],
+      "Init": []
+    },
+    {
+      "Id": "fake-split",
+      "Name": "Sahte TLS · bölme",
+      "ProviderHint": "Alternatif",
+      "Description": "MD5 imzalı sahte istek ve SNI bölme.",
+      "Arguments": [
+        "--lua-desync=fake:blob=fake_default_tls:tcp_md5:repeats=6",
+        "--lua-desync=multisplit:pos=1,midsld"
+      ],
+      "Init": []
+    },
+    {
+      "Id": "fakedsplit",
+      "Name": "MD5 · sahte bölme",
+      "ProviderHint": "Alternatif",
+      "Description": "Gerçek parçalar arasına MD5 ile geçersiz sahte parçalar eklenir.",
+      "Arguments": [
+        "--lua-desync=fakedsplit:pos=1,midsld:tcp_md5"
+      ],
+      "Init": []
+    }
+  ]
+}

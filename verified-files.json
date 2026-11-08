@@ -1,0 +1,42 @@
+[
+  {
+    "Path": "upstream-readme.md",
+    "SHA256": "3D4443759E4F2E8F6DA9341256DCDC66CC866118E353B3980602C1D1170E8DE6",
+    "GitBlobVerified": true
+  },
+  {
+    "Path": "runtime/WinDivert.dll",
+    "SHA256": "16ABD6A029E65557C6A309BEA7B13BF81FFF4E193567582E1CDDBF6719F323E0",
+    "GitBlobVerified": true
+  },
+  {
+    "Path": "runtime/WinDivert64.sys",
+    "SHA256": "8DA085332782708D8767BCACE5327A6EC7283C17CFB85E40B03CD2323A90DDC2",
+    "GitBlobVerified": true
+  },
+  {
+    "Path": "runtime/cygwin1.dll",
+    "SHA256": "103104A52E5293CE418944725DF19E2BF81AD9269B9A120D71D39028E821499B",
+    "GitBlobVerified": true
+  },
+  {
+    "Path": "runtime/lua/zapret-antidpi.lua",
+    "SHA256": "6D1FA9168E5DE1682FEF91FD174F68B58C50F6739EF00F42CA7DB2B940B6246D",
+    "GitBlobVerified": true
+  },
+  {
+    "Path": "runtime/lua/zapret-lib.lua",
+    "SHA256": "6BF528FEF1F0FC3C65E189216FC8A06BB873F6E25D1C29D2BFA4695A09B73440",
+    "GitBlobVerified": true
+  },
+  {
+    "Path": "runtime/windivert.filter/windivert_part.discord_media.txt",
+    "SHA256": "2F2DEAF49ED68EB684258497134181753188F2B475161DEB244488A53872B7C5",
+    "GitBlobVerified": true
+  },
+  {
+    "Path": "runtime/winws2.exe",
+    "SHA256": "9F25492575FF7C3F9E0D6211DAAC85704C309A0CA695423F0276D9EBDE3156AA",
+    "GitBlobVerified": true
+  }
+]

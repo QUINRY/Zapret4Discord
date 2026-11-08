@@ -1,0 +1,10 @@
+# Only Discord-owned service domains; subdomains are matched automatically.
+discord.com
+discord.co
+discord.gg
+discordapp.com
+discordapp.net
+discord.media
+discordcdn.com
+discord.gift
+dis.gd

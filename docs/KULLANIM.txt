@@ -1,0 +1,103 @@
+Zapret4Discord 1.1.4
+
+Küçük Windows uygulaması; Discord’a özel zapret2 bağlantısını yönetir.
+Windows 10 (2004 ve sonrası) / Windows 11, Intel veya AMD x64 içindir.
+.NET Framework 4.8 kullanır; Python veya .NET 8/10 kurulumu gerekmez.
+
+Kurulum
+Zapret4Discord-Setup-1.1.4-x64.exe dosyasını çalıştırıp yönetici onayını ver.
+Başlat menüsüne kısayol ve Windows uygulama listesine kaldırma kaydı eklenir.
+Masaüstü kısayolu isteğe bağlıdır. Güncelleme, seçili profili ve etkinlik
+ayarını korur. İlk kurulum Türkiye profiliyle hazırlanır.
+
+Kullanım ve sistem tepsisi
+Discord erişimini aç: Servisi başlatır, Windows açılışında etkinleştirir.
+Bağlantıyı durdur: Servisi durdurur; yeniden başlatana kadar kapalı kalır.
+Discord’u aç: Kurulu Discord’u, yoksa web uygulamasını açar.
+Çarpı veya küçültme: Pencereyi saat yanındaki sistem tepsisine gizler.
+Tepsi simgesine çift tıklama ya da Pencereyi aç: Pencereyi geri getirir.
+Sağ tuş menüsü: Pencereyi aç, Başlat, Durdur, Discord’u aç, Günlüğü aç,
+Kurulumu onar ve Çıkış. Çıkış arayüzü kapatır; servis çalışmaya devam eder.
+Erişimi de kapatmak istiyorsan önce Durdur’u seç.
+
+Profil listesi ve online check
+6 farklı profil bulunur. Bunlar uzak sunucu veya VPN değildir; aynı
+Discord bağlantısına uygulanan farklı paket işleme teknikleridir.
+Profilleri seçip bu bağlantıda kontrol edebilirsin.
+
+Seçili profili kullan: O profili kaydeder, başlatır, açılışta etkinleştirir.
+Seçili profili kontrol et: Yalnızca o profili geçici olarak deneyerek ölçer.
+Tümünü kontrol et: Bütün profilleri sırayla ölçer. Her profilin altında
+aynı dar Discord filtresi kullanılır; genel trafik kapsamına geçilmez.
+Kontrol sırasında Discord bağlantısı kısa süreli kesilebilir. Test bitince
+veya iptal edilince önceki profil ve açık/kapalı servis durumu geri gelir.
+Test, kendiliğinden farklı bir profili kalıcı olarak seçmez.
+İptal veya test sırasında Çıkış, o anki ağ isteğinin zaman aşımını bekleyip
+önceki durumu geri yükler. Çarpı testi durdurmaz; tepside devam eder.
+
+Yeşil: Discord API, CDN, gateway HTTPS, TLS 1.2 API/güncelleme ve anonim
+WebSocket Gateway Hello kontrollerinin tamamı bu profil altında geçti.
+Kırmızı: En az bir kontrol başarısız oldu. Hücre üstüne gelerek hata okunur.
+Gri: Henüz test yok, test yarıda kesildi, ağ değişti veya sonuç eskidi.
+Sonuçlar 15 dakika boyunca, aynı ağ ve aynı profil kataloğunda günceldir.
+Son test sütunu yerel saati gösterir. GATEWAY PING sütunu, seçilen profil altında
+Discord ağ geçidinin gidiş-dönüş gecikmesini ms cinsinden gösterir. Açılmış
+WebSocket bağlantısında üç heartbeat isteği gönderilip yanıtları ölçülür;
+ortanca değer kullanılır. Ölçüm yoksa veya sonuç eskimişse — görünür.
+Toplam test süresi ayrıca durum hücresinin açıklamasındadır.
+Test Discord hesabına giriş yapmaz, token veya sohbet mesajı kullanmaz.
+Yeşil, tüm Türkiye’de veya her ISS’de çalışma garantisi değildir; gerçek
+sesli görüşmenin veya kimlik doğrulamalı FortiClient bağlantısının testi
+anlamına gelmez. Bu iki akış ayrıca kullanıcıyla doğrulanır.
+
+
+Gateway Ping ve ses kanalı pingi
+GATEWAY PING başlığının yanındaki (?) işaretinin üzerine fareyle gelince
+ayrıntılı açıklama açılır; fareyi uzaklaştırınca kapanır. Buradaki Gateway Ping,
+Discord'un mesajlaşma ve bağlantı yönetimi için kullandığı ağ geçidine
+yapılan WebSocket ölçümüdür. Ses kanalı ayrı bir ses sunucusuna bağlanır;
+ses verisi UDP üzerinden taşınır. Discord'daki ses pingi bu ayrı bağlantıya
+aittir. Sunucu, bölge ve ağ yolu farklı olabildiğinden iki değer doğrudan
+karşılaştırılmaz.
+
+Örneğin burada 154 ms, ses kanalında 49 ms görmen normaldir. Bu, sesinin
+154 ms geciktiğini veya profilin ses pingini yükselttiğini göstermez.
+Sesli görüşme gecikmesini değerlendirirken Discord'un ses bağlantısında
+gösterdiği değeri esas al.
+
+Hosts kayıtları
+Kurulum, başlatma ve etkin servisin periyodik yenilemesi, discord-hosts.txt
+ile tanımlanan 11 zorunlu eşlemeyi doğrular. Eksik kayıtlar # BEGIN
+Zapret4Discord hosts / # END Zapret4Discord hosts bloğuna eklenir.
+Zaten doğru olan kullanıcı kayıtları aynen korunur. Çakışan Discord adları
+uyarlanırken diğer adlar ve yorumlar korunur. İlk gerçek değişiklikten önce
+hosts.original yedeği alınır. hosts-state.json yapılan işlemi kaydeder.
+Yalnızca bu 11 Discord eşlemesi yönetilir. DNS sunucuları, sistem proxy’si,
+rotalar, güvenlik yazılımı ve Secure Boot ayarları değiştirilmez.
+
+Kapsam ve VPN
+HTTPS paket değişikliği yalnızca Discord hizmetlerinin TLS/SNI alan adına
+uygulanır; fiziksel bağdaştırıcı ve Discord hedef IP’si kontrol edilir.
+Bu işlem adına göre filtre değildir: tarayıcıdan Discord da etkilenir.
+Paylaşılan IP’deki diğer alan adları değiştirilmeden geçirilir.
+Ses için yalnızca Discord’un 74 baytlık IP discovery isteği ve ilgili
+portlar kullanılır. Genel STUN, QUIC, UDP/443 veya oyun filtresi yoktur.
+FortiClient’ın kayıtlı VPN hedefleri ayrıca hariç tutulur. Fortinet,
+Tailscale ve diğer sanal bağdaştırıcılar kapsama alınmaz.
+
+Arka plan servisi: ZapretDiscordOnly
+Veri ve günlükler: C:\ProgramData\ZapretDiscordOnly
+Windows görevi: ZapretDiscordOnly-Refresh
+Görev açılışta ve 5 dakikada bir hedefleri ve VPN istisnalarını yeniler.
+İşlem yarıda kalırsa geçici test motoru kendini kapatır; yenileme görevi
+normal servisi kayıtlı ayara göre geri getirir.
+
+Kaldırma
+Windows Ayarlar > Uygulamalar > Yüklü uygulamalar > Zapret4Discord > Kaldır.
+Kendi servisi ve görevi kaldırılır. Programın yönettiği hosts değişiklikleri
+geri alınır; sonradan yapılmış diğer düzenlemeler ve kurulum öncesinde
+zaten doğru olan 11 kullanıcı kaydı korunur. İnceleme için günlükler ve
+yedek kalabilir. Ortak WinDivert sürücüsü topluca silinmez.
+
+Üçüncü taraf lisans metinleri paket dosyalarında bulunur.
+Dağıtım paketi kullanıcı günlüklerini, hesapları veya VPN adreslerini içermez.

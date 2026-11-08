@@ -1,0 +1,30 @@
+Zapret4Discord 1.1.4
+
+This application controls a separate, unmodified zapret2 process.
+It is independent of Discord Inc., Fortinet Inc. and the upstream projects.
+
+zapret2 / winws2 and Lua libraries
+Author: bol-van and contributors. License: MIT.
+Version: v1.0.7 / 038c97e5819df10f8e8c22a2f1fffe57f2f7379b.
+Source: https://github.com/bol-van/zapret2/tree/v1.0.7
+Windows binaries: https://github.com/bol-van/zapret-win-bundle/tree/bb6a20af35ed74778eb669f5413990eb8209c711
+License: licenses/ZAPRET2-MIT.txt
+
+WinDivert
+Author: Basil Projects and contributors.
+License: LGPLv3 or GPLv2, at the recipient's option.
+Source: https://github.com/basil00/WinDivert
+License texts: licenses/WINDIVERT-LICENSE.txt
+The DLL and signed x64 driver are unmodified upstream bundle files.
+
+Cygwin runtime (cygwin1.dll)
+Authors: Cygwin contributors / Red Hat and others.
+Version: 3.4.10. License: LGPLv3+ with the Cygwin linking exception.
+License texts: licenses/CYGWIN-LICENSE.txt, CYGWIN-LGPLv3.txt and CYGWIN-GPLv3.txt.
+Cygwin source repository: https://cygwin.com/git.html
+Source and corresponding source packages: https://cygwin.com/git.html
+https://cygwin.com/licensing.html
+https://cygwin.com/packages/
+
+No user logs, Discord account data, VPN gateway addresses, credentials or
+machine-specific network state are included in the distribution.

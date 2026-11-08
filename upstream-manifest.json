@@ -1,0 +1,56 @@
+{
+  "repository": "bol-van/zapret-win-bundle",
+  "commit": "bb6a20af35ed74778eb669f5413990eb8209c711",
+  "upstreamVersion": "zapret2 v1.0.7",
+  "asOf": "2026-11-08",
+  "files": [
+    {
+      "source": "readme.md",
+      "destination": "upstream-readme.md",
+      "gitBlobSha1": "f6ea972971f42c2c1ac137a39f395138529d6260",
+      "size": 7274
+    },
+    {
+      "source": "zapret-winws/WinDivert.dll",
+      "destination": "runtime/WinDivert.dll",
+      "gitBlobSha1": "2c55eeb6921351a6cad292a900f4b8d7d41c4bcc",
+      "size": 47616
+    },
+    {
+      "source": "zapret-winws/WinDivert64.sys",
+      "destination": "runtime/WinDivert64.sys",
+      "gitBlobSha1": "218ccaf423ef0a67696226f9ef3a09149e4441d0",
+      "size": 94144
+    },
+    {
+      "source": "zapret-winws/cygwin1.dll",
+      "destination": "runtime/cygwin1.dll",
+      "gitBlobSha1": "1bb2e05c6d5458ad7987859a17172b635e87b9c5",
+      "size": 2954293
+    },
+    {
+      "source": "zapret-winws/lua/zapret-antidpi.lua",
+      "destination": "runtime/lua/zapret-antidpi.lua",
+      "gitBlobSha1": "b768277b01114246503819d15a8ed1bb15011b5c",
+      "size": 51866
+    },
+    {
+      "source": "zapret-winws/lua/zapret-lib.lua",
+      "destination": "runtime/lua/zapret-lib.lua",
+      "gitBlobSha1": "8d942964631277515a516ea5c6a9ab2ba8ee92de",
+      "size": 93714
+    },
+    {
+      "source": "zapret-winws/windivert.filter/windivert_part.discord_media.txt",
+      "destination": "runtime/windivert.filter/windivert_part.discord_media.txt",
+      "gitBlobSha1": "d84f257adf3aa3e0a7b9c1640f3ee2ef390ae407",
+      "size": 581
+    },
+    {
+      "source": "zapret-winws/winws2.exe",
+      "destination": "runtime/winws2.exe",
+      "gitBlobSha1": "44f7d2400bdf9fbfb3b66d860fd11e8d9a1c9690",
+      "size": 657408
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+162.159.128.233 www.discord.com
+162.159.128.233 status.discord.com
+162.159.128.233 discord.com
+162.159.128.233 updates.discord.com
+162.159.135.234 discord.gg
+162.159.135.234 gateway.discord.gg
+162.159.129.233 cdn.discordapp.com
+162.159.129.233 discordapp.com
+162.159.128.235 latency.discord.media
+162.159.128.235 discord.media
+104.17.117.93 discord.co

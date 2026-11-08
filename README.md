@@ -9,7 +9,7 @@ Kurulum dosyası, sistem tepsisi kontrolleri, altı bağlantı profili, gerçek 
 <details>
 <summary>Uygulama ekran görüntüsünü göster</summary>
 
-![Zapret4Discord ana ekranı](docs/images/ana-ekran.png)
+![Zapret4Discord ana ekranı](docs/images/ana-ekran-1.1.4.png)
 
 </details>
 

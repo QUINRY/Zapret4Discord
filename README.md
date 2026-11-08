@@ -6,12 +6,7 @@ Kurulum dosyası, sistem tepsisi kontrolleri, altı bağlantı profili, gerçek 
 
 **[Son sürümü indir](https://github.com/QUINRY/Zapret4Discord/releases/latest)** · [Tüm sürümler](https://github.com/QUINRY/Zapret4Discord/releases) · [Kullanım kılavuzu](docs/KULLANIM.txt)
 
-<details>
-<summary>Uygulama ekran görüntüsünü göster</summary>
-
 ![Zapret4Discord ana ekranı](docs/images/ana-ekran-1.1.4.png)
-
-</details>
 
 ## Genel özellikler
 

@@ -6,7 +6,12 @@ Kurulum dosyası, sistem tepsisi kontrolleri, altı bağlantı profili, gerçek 
 
 **[Son sürümü indir](https://github.com/QUINRY/Zapret4Discord/releases/latest)** · [Tüm sürümler](https://github.com/QUINRY/Zapret4Discord/releases) · [Kullanım kılavuzu](docs/KULLANIM.txt)
 
+<details>
+<summary>Uygulama ekran görüntüsünü göster</summary>
+
 ![Zapret4Discord ana ekranı](docs/images/ana-ekran.png)
+
+</details>
 
 ## Genel özellikler
 
@@ -111,7 +116,7 @@ Program aşağıdaki Discord adlarını belirtilen IP adresleriyle eşler. Kurul
 104.17.117.93 discord.co
 ```
 
-Zaten doğru olan kayıtlar korunur. Eksikler programa ait işaretli bloğa eklenir. İlk gerçek değişiklikten önce yedek alınır; çakışan Discord adları düzenlenirken diğer adlar ve yorumlar korunur. Eşlemeler [discord-hosts.txt](discord-hosts.txt) dosyasında tanımlıdır.
+Zaten doğru olan kayıtlar korunur. Eksikler programa ait işaretli bloğa eklenir. İlk gerçek değişiklikten önce yedek alınır; çakışan Discord adları düzenlenirken diğer adlar ve yorumlar korunur. Eşlemeler [discord-hosts.txt](app/discord-hosts.txt) dosyasında tanımlıdır.
 
 Hosts göstergesi, yönetilen bu listenin önizlemesini açar. Kaldırma sırasında programın yaptığı hosts değişiklikleri geri alınır; önceden doğru olan kullanıcı kayıtları ve sonradan yapılmış diğer düzenlemeler korunur.
 
@@ -132,14 +137,15 @@ Destek için [Issues](https://github.com/QUINRY/Zapret4Discord/issues) bölümü
 
 ## Kaynak koddan derleme
 
-Windows üzerinde **.NET 8 SDK** ve **.NET Framework 4.8** gerekir. Derleme araçları ve sabitlenmiş motor dosyaları ilk çalıştırmada indirilir; dosyalar özetleriyle doğrulanır.
+Uygulama kodu, derleme betikleri ve testler [app](app) klasöründedir. Windows üzerinde **.NET 8 SDK** ve **.NET Framework 4.8** gerekir. Derleme araçları ve sabitlenmiş motor dosyaları ilk çalıştırmada indirilir; dosyalar özetleriyle doğrulanır.
 
 ```powershell
+Set-Location app
 .\Download-Upstream.ps1
 .\Build.ps1
 ```
 
-Kurulum dosyası `dist` klasörüne yazılır. Kaynak paketi ve SHA256 listesi için:
+Kurulum dosyası `app/dist` klasörüne yazılır. Aşağıdaki komutlar da `app` klasöründe çalıştırılır. Kaynak paketi ve SHA256 listesi için:
 
 ```powershell
 .\scripts\Package-Source.ps1
@@ -156,4 +162,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tests/Test-Profiles.ps1
 
 `Verify-Filter.py`, **kurulu ve kapsamı hazırlanmış** uygulamanın paket filtresini çevrimdışı sınar; ağ paketi göndermez. Bu isteğe bağlı araç için Python gerekir.
 
-Üçüncü taraf bileşenlerin lisans metinleri [licenses](licenses) klasöründe, dağıtım bildirimleri [THIRD-PARTY-NOTICES.txt](THIRD-PARTY-NOTICES.txt) dosyasındadır. Uygulama Discord veya Fortinet'in resmî ürünü değildir.
+Üçüncü taraf bileşenlerin lisans metinleri [licenses](app/licenses) klasöründe, dağıtım bildirimleri [THIRD-PARTY-NOTICES.txt](app/THIRD-PARTY-NOTICES.txt) dosyasındadır. Uygulama Discord veya Fortinet'in resmî ürünü değildir.

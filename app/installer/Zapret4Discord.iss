@@ -1,5 +1,5 @@
 #ifndef StageDir
-  #define StageDir "..\build\stage"
+  #define StageDir "..\build\stage-1.1.4"
 #endif
 #ifndef OutputPath
   #define OutputPath "..\dist"

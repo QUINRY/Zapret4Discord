@@ -5,6 +5,7 @@ $env:DOTNET_CLI_TELEMETRY_OPTOUT = '1'
 $env:DOTNET_NOLOGO = '1'
 $env:DOTNET_GENERATE_ASPNET_CERTIFICATE = 'false'
 $project = Join-Path $PSScriptRoot 'src\Zapret4Discord.App\Zapret4Discord.App.csproj'
+$repositoryRoot = Split-Path -Parent $PSScriptRoot
 $stage = Join-Path $PSScriptRoot 'build\stage-1.1.4'
 $dist = Join-Path $PSScriptRoot 'dist'
 if (-not $SkipTools) { & (Join-Path $PSScriptRoot 'scripts\Prepare-Tools.ps1') | Out-Host }
@@ -21,7 +22,7 @@ foreach ($name in @('Manage-DiscordOnly.ps1','Profile-Catalog.ps1','Profile-Oper
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination (Join-Path $stage 'payload') -Recurse -Force
 }
 Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'THIRD-PARTY-NOTICES.txt') -Destination $stage -Force
-Copy-Item -LiteralPath (Join-Path $PSScriptRoot 'docs\KULLANIM.txt') -Destination (Join-Path $stage 'KURULUM.txt') -Force
+Copy-Item -LiteralPath (Join-Path $repositoryRoot 'docs\KULLANIM.txt') -Destination (Join-Path $stage 'KURULUM.txt') -Force
 Get-ChildItem -LiteralPath (Join-Path $PSScriptRoot 'licenses') -File | Copy-Item -Destination (Join-Path $stage 'licenses') -Force
 & $compiler ('/DStageDir=' + $stage) ('/DOutputPath=' + $dist) (Join-Path $PSScriptRoot 'installer\Zapret4Discord.iss')
 if ($LASTEXITCODE -ne 0) { throw 'Installer build failed.' }
